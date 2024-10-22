@@ -67,16 +67,16 @@ python test_policy.py \
 datasets                            # data directory
 ├── prompts                         # initial jailbreaking templates
 ├── questions                       # harmful questions
-├── question_unalign_res.csv				# harmful questions and unaligned responses
+├── question_unalign_res.csv		   # harmful questions and unaligned responses
 a2c_ppo_acktr
-│   ├── algo              					# implementation of different training algorithms
-│   ├── models.py										# different RL agent
-│		├── envs.py 										# environment wrapper
+│   ├── algo              				# implementation of different training algorithms
+│   ├── models.py							# different RL agent
+│		├── envs.py 						# environment wrapper
 │   └── ... 
 llm_utils
 │   ├── creat_model.py              # create target LLM and helper LLM
-│   ├── model_inference.py					# perform LLM inference
-│   └── roberta_utils.py 						# GPTFuzzer's reward model related functions
+│   ├── model_inference.py				# perform LLM inference
+│   └── roberta_utils.py 				# GPTFuzzer's reward model related functions
 ├── utils.py                        # utils functions
 ├── RL_env.py                       # define RL environment
 ├── train_policy.py                 # training 
