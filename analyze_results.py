@@ -1,7 +1,6 @@
 import os
 os.environ["TOKENIZERS_PARALLELISM"] = "true"
 import openai
-import parser
 import argparse
 import torch
 import pandas as pd
