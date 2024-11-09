@@ -164,5 +164,5 @@ def main():
     
 
 if __name__ == "__main__":
-    torch.multiprocessing.set_start_method('spawn')# good solution !!!!
+    # torch.multiprocessing.set_start_method('spawn')# good solution !!!!
     main()
