@@ -1,10 +1,11 @@
 import os
-import gym
+import gymnasium as gym
 import torch
 import copy
 import numpy as np
 import pandas as pd
-from gym import spaces
+from gymnasium import spaces
+
 from sentence_transformers import SentenceTransformer
 
 from utils import *

@@ -25,3 +25,6 @@ nvidia-nvjitlink-cu12==12.3.52
 nvidia-nvtx-cu12==12.1.105
 torch==2.1.2
 torchvision
+fschat
+stable-baselines3
+openai
