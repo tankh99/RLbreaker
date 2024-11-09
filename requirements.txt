@@ -11,6 +11,7 @@ transformers==4.36.2
 openai
 vllm==0.2.7
 ray==2.9.0
+pydantic==1.10.13
 nvidia-cublas-cu12==12.1.3.1
 nvidia-cuda-cupti-cu12==12.1.105
 nvidia-cuda-nvrtc-cu12==12.1.105
