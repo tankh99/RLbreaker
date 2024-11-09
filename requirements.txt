@@ -5,7 +5,7 @@ termcolor
 openpyxl
 gymnasium
 numpy==1.24.3
-sentence-transformers==3.2.1
+sentence-transformers==2.3.0
 tokenizers==0.15.0
 transformers==4.36.2
 openai==0.28.0
@@ -26,5 +26,3 @@ nvidia-nvtx-cu12==12.1.105
 torch==2.1.2
 torchvision
 fschat
-stable-baselines3
-openai
