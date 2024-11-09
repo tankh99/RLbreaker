@@ -2,7 +2,7 @@ import pandas as pd
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-questions = pd.read_csv('/datasets/eval/RL_Meta-Llama-3-8B-Instruct_0_responses_none.csv')['question'].tolist()
+questions = pd.read_csv('./datasets/eval/RL_Meta-Llama-3-8B-Instruct_0_responses_none.csv')['question'].tolist()
 device = "cuda" if torch.cuda.is_available() else "cpu"
 model_name = "TheBloke/Wizard-Vicuna-7B-Uncensored-GPTQ"
 model = AutoModelForCausalLM.from_pretrained(
