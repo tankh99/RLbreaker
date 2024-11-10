@@ -17,7 +17,7 @@ tokenizer = AutoTokenizer.from_pretrained(model_name)
 
 def generate_response(prompt):
     inputs = tokenizer(prompt, return_tensors="pt").to(device)
-    outputs = model.generate(**inputs, pad_token_id=tokenizer.eos_token_id)
+    outputs = model.generate(**inputs, max_length=1024, pad_token_id=tokenizer.eos_token_id)
     return tokenizer.decode(outputs[0], skip_special_tokens=True)
 
 responses = []
