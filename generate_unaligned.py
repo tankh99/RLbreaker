@@ -24,6 +24,9 @@ responses = []
 
 for q in questions:
     response = generate_response(q)
+    print(f"Generating response for: {q}")
+    print(f"Response: {response}")
+    print("-------------------")
     responses.append(response)
 
 
