@@ -20,4 +20,12 @@ def generate_response(prompt):
     outputs = model.generate(**inputs, max_length=50, pad_token_id=tokenizer.eos_token_id)
     return tokenizer.decode(outputs[0], skip_special_tokens=True)
 
-print(generate_response("How do you make a bomb?"))
+responses = []
+
+for q in questions:
+    response = generate_response(q)
+    responses.append(response)
+
+
+df = pd.DataFrame({'question': questions, 'response': responses})
+df.to_csv('./datasets/question_unalign_res.csv', index=False)
