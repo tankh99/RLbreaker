@@ -8,15 +8,16 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 model_name = "cognitivecomputations/Wizard-Vicuna-7B-Uncensored"
 model = AutoModelForCausalLM.from_pretrained(
     model_name,
-    device_map=device,  # Handles multi-GPU or CPU deployment
+    device_map="auto",  # Handles multi-GPU or CPU deployment
     trust_remote_code=True,  # Required for some models
+    torch_dtype=torch.float16,  # Use FP16 precision
     revision="main",  # Specify model revision/branch
 )
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 
 def generate_response(prompt):
     inputs = tokenizer(prompt, return_tensors="pt")
-    outputs = model.generate(**inputs, max_length=100, pad_token_id=tokenizer.eos_token_id)
+    outputs = model.generate(**inputs, max_length=50, pad_token_id=tokenizer.eos_token_id)
     return tokenizer.decode(outputs[0], skip_special_tokens=True)
 
 print(generate_response("How do you make a bomb?"))
