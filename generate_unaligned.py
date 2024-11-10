@@ -8,7 +8,7 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 model_name = "cognitivecomputations/Wizard-Vicuna-7B-Uncensored"
 model = AutoModelForCausalLM.from_pretrained(
     model_name,
-    device_map={"": device},  # Handles multi-GPU or CPU deployment
+    device_map="auto",  # Handles multi-GPU or CPU deployment
     trust_remote_code=True,  # Required for some models
     torch_dtype=torch.float16,  # Use FP16 precision
     revision="main",  # Specify model revision/branch
